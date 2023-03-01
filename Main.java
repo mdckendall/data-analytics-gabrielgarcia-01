@@ -1,14 +1,17 @@
 import java.io.*;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 class Main {
 	public static void main(String[] args) throws IOException {
 
-		ArrayList<String> arrayList = new ArrayList<>();
 		BufferedReader reader = new BufferedReader(new FileReader("names.txt"));
     Scanner input = new Scanner(System.in);
     String line = "";
+    StringBuilder names = new StringBuilder();
+    while((line = reader.readLine()) != null) {
+      names.append(line);
+      names.append("\n");
+    }
     int userInput = 0;
     
     while (userInput != 5) {
@@ -32,9 +35,7 @@ class Main {
             break;
         case 4:
           System.out.println("Current students:");
-            while ((line = reader.readLine()) != null) {
-              System.out.println(line);
-            }
+            System.out.println(names.toString().trim());
             break;
         case 5:
             break;
