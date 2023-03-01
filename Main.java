@@ -34,7 +34,7 @@ class Main {
             System.out.println("Top 10 Forbes In-Demand Jobs!");
             break;
         case 4:
-          System.out.println("Current students:");
+          System.out.println("Current Students:");
             for(int i = 0; i < names.size(); i++) {
               System.out.println(names.get(i));
             }
