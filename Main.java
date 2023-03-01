@@ -35,11 +35,11 @@ class Main {
             while ((line = reader.readLine()) != null) {
               System.out.println(line);
             }
-            reader.close();
             break;
         case 5:
             break;
       }
-    }  
+    }
+    reader.close();
 	}
 }
