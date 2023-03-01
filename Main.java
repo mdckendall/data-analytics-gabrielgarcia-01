@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class Main {
 	public static void main(String[] args) throws IOException {
@@ -7,10 +8,9 @@ class Main {
 		BufferedReader reader = new BufferedReader(new FileReader("names.txt"));
     Scanner input = new Scanner(System.in);
     String line = "";
-    StringBuilder names = new StringBuilder();
+    ArrayList<String> names = new ArrayList<String>();
     while((line = reader.readLine()) != null) {
-      names.append(line);
-      names.append("\n");
+      names.add(line);
     }
     int userInput = 0;
     
@@ -35,12 +35,15 @@ class Main {
             break;
         case 4:
           System.out.println("Current students:");
-            System.out.println(names.toString().trim());
+            for(int i = 0; i < names.size(); i++) {
+              System.out.println(names.get(i));
+            }
             break;
         case 5:
             break;
       }
     }
     reader.close();
+    input.close();
 	}
 }
